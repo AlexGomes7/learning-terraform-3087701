@@ -43,7 +43,7 @@ module "autoscaling" {
 
   vpc_zone_identifier  = module.blog_vpc.public_subnets
 
-  traffic_source_attachments = module.blog_alb.target_group_arns
+  traffic_source_attachments = {module.blog_alb.target_group_arns : "elbv2"}
 
   security_groups      = [module.blog_sg.security_group_id]
   
